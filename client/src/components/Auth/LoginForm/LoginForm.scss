@@ -1,0 +1,75 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.login-form {
+    @include flex-center;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: map-get($spacing, xl);
+
+    @include mobile {
+        padding: map-get($spacing, md);
+    }
+
+    &__title {
+        @include typography(xl, bold);
+        color: $secondary-color;
+        margin-bottom: map-get($spacing, xl);
+        text-align: center;
+    }
+
+    &__form {
+        width: 100%;
+    }
+
+    &__field {
+        margin-bottom: map-get($spacing, lg);
+    }
+
+    &__label {
+        display: block;
+        @include typography(sm, 600);
+        margin-bottom: map-get($spacing, xs);
+        color: $gray-dark;
+    }
+
+    &__input {
+        @include input-base;
+
+        &--error {
+            border-color: $error-color;
+        }
+    }
+
+    &__error {
+        display: block;
+        @include typography(xs);
+        color: $error-color;
+        margin-top: map-get($spacing, xs);
+    }
+
+    &__submit {
+        @include button-primary;
+        width: 100%;
+        margin-top: map-get($spacing, lg);
+        padding: map-get($spacing, md);
+        @include typography(base, bold);
+    }
+
+    &__register {
+        text-align: center;
+        margin-top: map-get($spacing, lg);
+        @include typography(sm);
+        color: $gray-dark;
+    }
+
+    &__link {
+        color: $primary-color;
+        font-weight: 600;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
