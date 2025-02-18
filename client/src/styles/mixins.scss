@@ -1,0 +1,119 @@
+@import 'variables';
+
+// Media Queries
+@mixin mobile {
+    @media (min-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
+
+// Flexbox helpers
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// Typography
+@mixin typography($size, $weight: normal, $line-height: 1.5) {
+    font-size: map-get($font-sizes, $size);
+    font-weight: $weight;
+    line-height: $line-height;
+}
+
+// Container
+@mixin container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 map-get($spacing, md);
+
+    @include tablet {
+        max-width: map-get($breakpoints, tablet);
+    }
+
+    @include desktop {
+        max-width: map-get($breakpoints, desktop);
+    }
+}
+
+// Button styles
+@mixin button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: map-get($spacing, sm) map-get($spacing, md);
+    border-radius: $border-radius-sm;
+    font-weight: 700;
+    transition: all $transition-normal;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+}
+
+@mixin button-primary {
+    @include button-base;
+    background-color: $primary-color;
+    color: $background-color;
+
+    &:hover:not(:disabled) {
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+@mixin button-secondary {
+    @include button-base;
+    background-color: transparent;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+
+    &:hover:not(:disabled) {
+        background-color: $primary-color;
+        color: $background-color;
+    }
+}
+
+// Form elements
+@mixin input-base {
+    width: 100%;
+    padding: map-get($spacing, sm);
+    border: 1px solid $gray-medium;
+    border-radius: $border-radius-sm;
+    font-family: $font-primary;
+    font-size: map-get($font-sizes, base);
+    transition: border-color $transition-fast;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-color;
+    }
+
+    &::placeholder {
+        color: $gray-medium;
+    }
+
+    &:disabled {
+        background-color: $gray-light;
+        cursor: not-allowed;
+    }
+}

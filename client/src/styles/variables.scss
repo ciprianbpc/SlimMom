@@ -1,0 +1,54 @@
+$primary-color: #FC842D;
+$secondary-color: #264061;
+$background-color: #FFFFFF;
+$text-color: #212121;
+$error-color: #E74C3C;
+$success-color: #27AE60;
+$gray-light: #F0F1F3;
+$gray-medium: #9B9FAA;
+$gray-dark: #666666;
+
+// Typography
+$font-primary: 'Verdana', sans-serif;
+$font-secondary: 'Gothic A1', sans-serif;
+
+$font-sizes: (
+    xs: 12px,
+    sm: 14px,
+    base: 16px,
+    lg: 18px,
+    xl: 24px,
+    xxl: 32px
+);
+
+// Breakpoints
+$breakpoints: (
+    mobile: 320px,
+    tablet: 768px,
+    desktop: 1280px
+);
+
+// Spacing
+$spacing: (
+    xs: 4px,
+    sm: 8px,
+    md: 16px,
+    lg: 24px,
+    xl: 32px,
+    xxl: 48px
+);
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+// Transitions
+$transition-fast: 150ms ease-in-out;
+$transition-normal: 300ms ease-in-out;
+$transition-slow: 500ms ease-in-out;
