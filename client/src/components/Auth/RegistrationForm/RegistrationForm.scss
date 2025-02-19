@@ -1,0 +1,32 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.registration-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        text-align: center;
+        margin-bottom: var(--spacing-xl);
+        color: var(--secondary-color);
+    }
+
+    .form-footer {
+        margin-top: var(--spacing-lg);
+        text-align: center;
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: var(--font-weight-bold);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
